@@ -1,0 +1,48 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+name: Myco
+scopeName: source.myco
+fileTypes: [my]
+uuid: 2382235e-084e-4181-8783-337e31e15474
+patterns:
+
+- comment: Constant
+  name: support.class.myco
+  match: \b[A-Z]\w*\b
+
+- comment: Binding
+  name: meta.binding.myco
+  match: ((\w+\s+)*)(\w+)(?=\s*:)
+  captures:
+    '1': {name: keyword.decorator.myco}
+    '2': {name: keyword.decorator.myco}
+    '3': {name: entity.other.attribute-name.myco}
+
+- comment: Function Call (with braces)
+  name: entity.name.function
+  match: (\w+)(?=\s*\()
+
+- comment: Parameters
+  begin: (\|)
+  end: (\|)
+  captures:
+    '1': {name: punctuation.separator.parameter.ruby}
+  patterns:
+  - comment: The default value of a parameter following an =
+    begin: ([=:])
+    end: (?=[,|])
+    captures:
+      '1': {name: keyword.operator.assignment.ruby}
+    patterns:
+    - include: source.ruby
+
+  - comment: The name of a parameter
+    name: variable.parameter.myco
+    match: '[_a-zA-Z][_a-zA-Z0-9]*'
+
+  - comment: The comma separator for parameters
+    name: punctuation.separator.parameter.myco
+    match: ','
+
+  - include: source.ruby
+
+- include: source.ruby
