@@ -1,6 +1,6 @@
 # [PackageDev] target_format: plist, ext: tmPreferences
 name: Comments
-uuid: 1BA75B32-707C-11D9-A928-000D93589AF6
+uuid: 2382235e-084e-4182-8783-337e31e15474
 scope: source.myco
 settings:
   shellVariables:
