@@ -45,6 +45,32 @@
 			<string>meta.binding.myco</string>
 		</dict>
 		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.assignment.ruby</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.myco</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.assignment.ruby</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Category</string>
+			<key>match</key>
+			<string>(\[)\s*(\w+)\s*(\])</string>
+			<key>name</key>
+			<string>meta.category.myco</string>
+		</dict>
+		<dict>
 			<key>comment</key>
 			<string>Function Call (with braces)</string>
 			<key>match</key>
