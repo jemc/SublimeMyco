@@ -9,6 +9,13 @@ patterns:
   name: support.class.myco
   match: \b[A-Z]\w*\b
 
+- comment: id Binding
+  name: meta.idbinding.myco
+  match: (id)\s*:\s*(.+)
+  captures:
+    '1': {name: entity.other.attribute-name.myco}
+    '2': {name: entity.name.tag.myco}
+
 - comment: Binding
   name: meta.binding.myco
   match: ((\w+\s+)*)(\w+)(?=\s*:)

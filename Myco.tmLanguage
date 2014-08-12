@@ -24,6 +24,27 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
+					<string>entity.other.attribute-name.myco</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.myco</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>id Binding</string>
+			<key>match</key>
+			<string>(id)\s*:\s*(.+)</string>
+			<key>name</key>
+			<string>meta.idbinding.myco</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
 					<string>keyword.decorator.myco</string>
 				</dict>
 				<key>2</key>
