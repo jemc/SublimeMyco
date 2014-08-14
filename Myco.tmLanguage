@@ -87,7 +87,7 @@
 			<key>comment</key>
 			<string>Category</string>
 			<key>match</key>
-			<string>(\[)([^]]*)(\])</string>
+			<string>^\s*(\[)([^]]*)(\])\s*$</string>
 			<key>name</key>
 			<string>meta.category.myco</string>
 		</dict>
