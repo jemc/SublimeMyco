@@ -26,7 +26,7 @@ patterns:
 
 - comment: Category
   name: meta.category.myco
-  match: (\[)\s*(\w+)\s*(\])
+  match: (\[)([^]]*)(\])
   captures:
     '1': {name: keyword.operator.assignment.ruby}
     '2': {name: entity.name.tag.myco}
