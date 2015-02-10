@@ -5,50 +5,120 @@ fileTypes: [my]
 uuid: 2382235e-084e-4181-8783-337e31e15474
 patterns:
 
+- comment: Line Comment
+  name: comment.line.myco
+  begin: (\s*#)
+  end: ($)
+
+- comment: Double-Quote String
+  name: string.quoted.double.myco
+  begin: (")
+  end: ((?<=[^\\])")
+
+- comment: Single-Quote String
+  name: string.quoted.double.myco
+  begin: (')
+  end: ((?<=[^\\])')
+
+- comment: Symbol Literal
+  name: constant.other.symbol.myco
+  match: (:[a-z][_a-zA-Z]*|:)
+
+- comment: Double-Quote Symbol
+  name: constant.other.symbol.quoted.double.myco
+  begin: (:")
+  end: ((?<=[^\\])")
+
 - comment: Constant
   name: support.class.myco
   match: \b[A-Z]\w*\b
 
-- comment: id Binding
-  name: meta.idbinding.myco
+- comment: id Meme
+  name: meta.idmeme.myco
   match: (id)\s*:\s*(.+)
   captures:
     '1': {name: entity.other.attribute-name.myco}
     '2': {name: entity.name.tag.myco}
 
-- comment: Binding
-  name: meta.binding.myco
-  match: ((\w+\s+)*)(\w+)(?=\s*:)
+- comment: Meme
+  name: meta.meme.myco
+  match: ((\w+\s+)*)(\w+)(\s*:)
   captures:
     '1': {name: keyword.decorator.myco}
     '2': {name: keyword.decorator.myco}
     '3': {name: entity.other.attribute-name.myco}
+    '4': {name: punctuation.separator.other.myco}
 
 - comment: Category
   name: meta.category.myco
-  match: ^\s*(\[)([^]]*)(\])\s*$
+  match: ^\s*(\[)(([^]]|\\\])*)(\])\s*$
   captures:
-    '1': {name: keyword.operator.assignment.ruby}
+    '1': {name: keyword.operator.assignment.myco}
     '2': {name: entity.name.tag.myco}
-    '3': {name: keyword.operator.assignment.ruby}
+    '3': {name: entity.name.tag.myco}
+    '4': {name: keyword.operator.assignment.myco}
+
+- comment: Special Immediate Values
+  name: keyword.immediate.myco
+  match: \b(true|false|null|void)\b
 
 - comment: Function Call (with braces)
-  name: entity.name.function
+  name: entity.name.function.myco
   match: (\w+)(?=\s*\()
+
+- comment: Function Call (with receiver)
+  name: support.function.myco
+  match: (?<=\.)(\w+)
+
+- comment: Parenthesis
+  name: punctuation.section.paren.myco
+  match: (\(|\))
+
+- comment: Brace
+  name: punctuation.section.brace.myco
+  match: (\{|\})
+
+- comment: Bracket
+  name: punctuation.section.bracket.myco
+  match: (\[|\])
+
+- comment: Expression Separators
+  name: punctuation.separator.myco
+  match: (\,|\;)
+
+- comment: Branching Operators
+  name: keyword.operator.compound.myco
+  match: (\&\&|\|\||\?\?|\&\?|\|\?|\.\?)
+
+- comment: Comparison Operators
+  name: keyword.operator.comparison.myco
+  match: (\<\=\>|\=\~|\=\=|\<\=|\>\=|\<|\>)
+
+- comment: Arithmetic Operators
+  name: keyword.operator.arithmetic.myco
+  match: (\+|\-|\/|\*|\%)
+
+- comment: Assignment Operators
+  name: keyword.operator.assignment.myco
+  match: (\=)
+
+- comment: Other Operators
+  name: keyword.operator.other.myco
+  match: (\!|\<\<|\<|\&)
 
 - comment: Parameters
   begin: (\|)
   end: (\|)
   captures:
-    '1': {name: punctuation.separator.parameter.ruby}
+    '1': {name: punctuation.separator.parameter.myco}
   patterns:
   - comment: The default value of a parameter following an =
     begin: ([=:])
     end: (?=[,|])
     captures:
-      '1': {name: keyword.operator.assignment.ruby}
+      '1': {name: keyword.operator.assignment.myco}
     patterns:
-    - include: source.ruby
+    - include: source.myco
 
   - comment: The name of a parameter
     name: variable.parameter.myco
@@ -58,6 +128,6 @@ patterns:
     name: punctuation.separator.parameter.myco
     match: ','
 
-  - include: source.ruby
+  - include: source.myco
 
-- include: source.ruby
+# - include: source.ruby
