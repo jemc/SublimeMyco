@@ -71,6 +71,10 @@ patterns:
   name: keyword.immediate.myco
   match: \b(true|false|null|void)\b
 
+- comment: Numeric Values
+  name: constant.numeric.myco
+  match: \b(\d+(\.\d+)?)\b
+
 - comment: Function Call (with braces)
   name: entity.name.function.myco
   match: (\w+)(?=\s*\()

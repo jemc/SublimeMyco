@@ -186,6 +186,14 @@
 		</dict>
 		<dict>
 			<key>comment</key>
+			<string>Numeric Values</string>
+			<key>match</key>
+			<string>\b(\d+(\.\d+)?)\b</string>
+			<key>name</key>
+			<string>constant.numeric.myco</string>
+		</dict>
+		<dict>
+			<key>comment</key>
 			<string>Function Call (with braces)</string>
 			<key>match</key>
 			<string>(\w+)(?=\s*\()</string>
