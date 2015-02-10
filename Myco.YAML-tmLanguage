@@ -10,6 +10,18 @@ patterns:
   begin: (\s*#)
   end: ($)
 
+- comment: Symbol Literal
+  name: constant.other.symbol.myco
+  match: (:[a-z][_a-zA-Z]*)
+
+- comment: Double-Quote Symbol
+  name: constant.other.symbol.quoted.double.myco
+  begin: (:")
+  end: (")
+  patterns:
+  - name: constant.character.escape.myco
+    match: \\.
+
 - comment: Double-Quote String
   name: string.quoted.double.myco
   begin: (")
@@ -25,15 +37,6 @@ patterns:
   patterns:
   - name: constant.character.escape.myco
     match: \\.
-
-- comment: Symbol Literal
-  name: constant.other.symbol.myco
-  match: (:[a-z][_a-zA-Z]*|:)
-
-- comment: Double-Quote Symbol
-  name: constant.other.symbol.quoted.double.myco
-  begin: (:")
-  end: ((?<=[^\\])")
 
 - comment: Constant
   name: support.class.myco

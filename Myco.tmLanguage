@@ -21,6 +21,33 @@
 			<string>comment.line.myco</string>
 		</dict>
 		<dict>
+			<key>comment</key>
+			<string>Symbol Literal</string>
+			<key>match</key>
+			<string>(:[a-z][_a-zA-Z]*)</string>
+			<key>name</key>
+			<string>constant.other.symbol.myco</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>(:")</string>
+			<key>comment</key>
+			<string>Double-Quote Symbol</string>
+			<key>end</key>
+			<string>(")</string>
+			<key>name</key>
+			<string>constant.other.symbol.quoted.double.myco</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\\.</string>
+					<key>name</key>
+					<string>constant.character.escape.myco</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
 			<key>begin</key>
 			<string>(")</string>
 			<key>comment</key>
@@ -57,24 +84,6 @@
 					<string>constant.character.escape.myco</string>
 				</dict>
 			</array>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>Symbol Literal</string>
-			<key>match</key>
-			<string>(:[a-z][_a-zA-Z]*|:)</string>
-			<key>name</key>
-			<string>constant.other.symbol.myco</string>
-		</dict>
-		<dict>
-			<key>begin</key>
-			<string>(:")</string>
-			<key>comment</key>
-			<string>Double-Quote Symbol</string>
-			<key>end</key>
-			<string>((?&lt;=[^\\])")</string>
-			<key>name</key>
-			<string>constant.other.symbol.quoted.double.myco</string>
 		</dict>
 		<dict>
 			<key>comment</key>
