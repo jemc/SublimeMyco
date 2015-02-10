@@ -13,12 +13,18 @@ patterns:
 - comment: Double-Quote String
   name: string.quoted.double.myco
   begin: (")
-  end: ((?<=[^\\])")
+  end: (")
+  patterns:
+  - name: constant.character.escape.myco
+    match: \\.
 
 - comment: Single-Quote String
   name: string.quoted.double.myco
   begin: (')
-  end: ((?<=[^\\])')
+  end: (')
+  patterns:
+  - name: constant.character.escape.myco
+    match: \\.
 
 - comment: Symbol Literal
   name: constant.other.symbol.myco

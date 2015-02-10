@@ -26,9 +26,18 @@
 			<key>comment</key>
 			<string>Double-Quote String</string>
 			<key>end</key>
-			<string>((?&lt;=[^\\])")</string>
+			<string>(")</string>
 			<key>name</key>
 			<string>string.quoted.double.myco</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\\.</string>
+					<key>name</key>
+					<string>constant.character.escape.myco</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -36,9 +45,18 @@
 			<key>comment</key>
 			<string>Single-Quote String</string>
 			<key>end</key>
-			<string>((?&lt;=[^\\])')</string>
+			<string>(')</string>
 			<key>name</key>
 			<string>string.quoted.double.myco</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\\.</string>
+					<key>name</key>
+					<string>constant.character.escape.myco</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>comment</key>
